@@ -15,18 +15,20 @@ function cript(){
         while (representacaoBinaria.length < 8) {
             representacaoBinaria = "0" + representacaoBinaria;
         }
-        conj.push(representacaoBinaria);
-        binario += representacaoBinaria;
 
-        for(var j = 0; j < representacaoBinaria.length; j++){
-            var binL = representacaoBinaria.charAt(j);
+        conj.push(representacaoBinaria); // Atribui o valor binário para a array "conj"
+        binario += representacaoBinaria; // Texto com todos os valores binários juntos
+
+        for(var j = 0; j < representacaoBinaria.length; j++){ 
+            var binL = representacaoBinaria.charAt(j); // Obtem o valor de cada número do conjunto binário
+            // Inverte os valores
             if(binL == "0"){
-                binInverso += "1"; 
+                binInverso += "1";  
             }else{
                 binInverso += "0";
             }
         }
-        conjInverso.push(binInverso);
+        conjInverso.push(binInverso); // Atribui o valor invertido a uma nova array "conjInverso"
     }
     res.innerHTML =`Binário: ${conj}<br>Binário inverso: ${conjInverso}` 
     
