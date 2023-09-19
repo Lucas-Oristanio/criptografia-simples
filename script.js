@@ -13,17 +13,19 @@ function cript(){
         while (representacaoBinaria.length < 8) {
             representacaoBinaria = "0" + representacaoBinaria;
         }
+        conj.push(representacaoBinaria);
+    }
+        //binario += representacaoBinaria;
 
-        binario += representacaoBinaria;
-        for (var i = 0; i < binario.length; i += 4) {
-            var grupoBinario = binario.substr(i, 4);
+        /* for (var i = 0; i < binario.length; i += 8) {
+            var grupoBinario = binario.substr(i, 8);
             var valorHexadecimal = parseInt(grupoBinario, 2).toString(16);
             textoHexadecimal += valorHexadecimal;
         }
-           textoHexadecimal.toUpperCase(); // Converte para maiúsculas para convenção.
-        }
-        console.log(`Texto: ${texto}\nBinário: ${binario}\nHexadecimal: ${textoHexadecimal}`)
-        res.innerHTML = `${textoHexadecimal}`
-    }
     
-
+        } 
+        */
+        //console.log(`Texto: ${texto}\nBinário: ${binario}\nHexadecimal: ${textoHexadecimal}`)
+        res.innerHTML = `${conj}`
+    
+}    
