@@ -14,18 +14,17 @@ function cript(){
             representacaoBinaria = "0" + representacaoBinaria;
         }
         conj.push(representacaoBinaria);
+        binario += representacaoBinaria;
     }
-        //binario += representacaoBinaria;
 
-        /* for (var i = 0; i < binario.length; i += 8) {
+        for (var i = 0; i < binario.length; i += 8) {
             var grupoBinario = binario.substr(i, 8);
             var valorHexadecimal = parseInt(grupoBinario, 2).toString(16);
             textoHexadecimal += valorHexadecimal;
         }
-    
-        } 
-        */
+        
         //console.log(`Texto: ${texto}\nBinário: ${binario}\nHexadecimal: ${textoHexadecimal}`)
         res.innerHTML = `${conj}`
+        alert(textoHexadecimal)
     
 }    
