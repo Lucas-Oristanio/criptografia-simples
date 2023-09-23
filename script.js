@@ -6,11 +6,13 @@ function cript(){
     var binInverso = "";
     var binario = "";
     var textoHexadecimal = "";
+    var valorHexadecimal = "";
 
     for (var i = 0; i < texto.length; i++) {
         var codigoAscii = texto.charCodeAt(i); // Obtem o valor ASCII do caractere
         var representacaoBinaria = codigoAscii.toString(2); // Converte para binário
-
+        binInverso = "";
+        valorHexadecimal = "";
         // Preenche com zeros à esquerda para ter 8 bits (um byte)
         while (representacaoBinaria.length < 8) {
             representacaoBinaria = "0" + representacaoBinaria;
@@ -27,21 +29,24 @@ function cript(){
             }else{
                 binInverso += "0";
             }
+            
         }
         conjInverso.push(binInverso); // Atribui o valor invertido a uma nova array "conjInverso"
+
+        /*for (var l = 0; l < binario.length; l += 8) {
+            var grupoBinario = binario.substr(i, 8);
+            valorHexadecimal = parseInt(grupoBinario, 2).toString(16);
+            textoHexadecimal += valorHexadecimal;
+        }*/
+        valorHexadecimal = parseInt(binInverso, 2).toString(16);
+        textoHexadecimal += valorHexadecimal;
     }
-    res.innerHTML =`Binário: ${conj}<br>Binário inverso: ${conjInverso}` 
     
     //console.log(conj);
-
-    /*    for (var i = 0; i < binario.length; i += 8) {
-            var grupoBinario = binario.substr(i, 8);
-            var valorHexadecimal = parseInt(grupoBinario, 2).toString(16);
-            textoHexadecimal += valorHexadecimal;
-        }
         
         //console.log(`Texto: ${texto}\nBinário: ${binario}\nHexadecimal: ${textoHexadecimal}`)
-        res.innerHTML = `${conj}`
-        alert(textoHexadecimal)*/
+        //res.innerHTML = `${conj}`
+        //alert(textoHexadecimal)
+        res.innerHTML =`Binário: ${conj}<br>Binário inverso: ${conjInverso}<br>Hexadecimal: ${textoHexadecimal}` 
     
 }    
